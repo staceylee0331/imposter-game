@@ -26,7 +26,7 @@ export const RoleReveal: React.FC<RoleRevealProps> = ({ players, gameData, onFin
 
   const RevealCard = () => (
     <div 
-      className="w-full max-w-xs aspect-[3/4] cursor-pointer group perspective-1000"
+      className="w-full max-w-xs aspect-[3/4] cursor-pointer group perspective-1000 mx-auto"
       onClick={() => setIsRevealed(!isRevealed)}
     >
       <div className={`relative w-full h-full transition-transform duration-700 transform-style-3d ${isRevealed ? 'rotate-y-180' : ''}`}
@@ -85,15 +85,17 @@ export const RoleReveal: React.FC<RoleRevealProps> = ({ players, gameData, onFin
   );
 
   return (
-    <div className="flex flex-col h-full w-full items-center justify-center p-6 space-y-8 animate-fade-in">
-        <div className="text-center space-y-1">
+    <div className="flex flex-col h-full w-full items-center p-6 overflow-y-auto custom-scrollbar">
+        <div className="text-center space-y-1 shrink-0 mt-2 mb-6">
             <h1 className="text-xl font-bold text-slate-300">Secret Identity</h1>
             <p className="text-slate-500">Pass the device to each player</p>
         </div>
 
-        <RevealCard />
+        <div className="flex-1 w-full flex flex-col justify-center mb-6 min-h-0">
+             <RevealCard />
+        </div>
 
-        <div className="w-full max-w-xs">
+        <div className="w-full max-w-xs shrink-0 mb-4">
              <button
                 onClick={handleNext}
                 disabled={isRevealed} // Force them to hide card before passing
