@@ -1,0 +1,5 @@
+{
+  "name": "Imposter AI",
+  "description": "A modern, AI-powered take on the classic party game 'Spyfall'. Use Gemini to generate infinite unique locations and roles for your group.",
+  "requestFramePermissions": []
+}
